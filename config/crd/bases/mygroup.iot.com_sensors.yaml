@@ -47,7 +47,6 @@ spec:
                 format: int32
                 type: integer
               sensortype:
-                description: type of sensor, required
                 type: string
               setting:
                 type: string

@@ -35,10 +35,15 @@ spec:
           spec:
             description: CameraSpec defines the desired state of Camera
             properties:
-              foo:
-                description: Foo is an example field of Camera. Edit camera_types.go
-                  to remove/update
+              cameratype:
                 type: string
+              location:
+                type: string
+              setting:
+                type: string
+            required:
+            - cameratype
+            - location
             type: object
           status:
             description: CameraStatus defines the observed state of Camera
