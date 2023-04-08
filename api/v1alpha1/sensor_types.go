@@ -28,18 +28,23 @@ type SensorSpec struct {
 	// INSERT ADDITIONAL SPEC FIELDS - desired state of cluster
 	// Important: Run "make" to regenerate code after modifying this file
 
+	Size       int32  `json:"size,omitempty"`
 	Sensortype string `json:"sensortype"`
-	Location string `json:"location"`
-	Setting string `json:"setting,omitempty"`
-	High int32 `json:"high,omitempty"`
-	Low int32 `json:"low,omitempty"`
-	Rh int32 `json:"hr,omitempty"`
+	Location   string `json:"location"`
+	Setting    string `json:"setting,omitempty"`
+	High       int32  `json:"high,omitempty"`
+	Low        int32  `json:"low,omitempty"`
+	Rh         int32  `json:"hr,omitempty"`
 }
 
 // SensorStatus defines the observed state of Sensor
 type SensorStatus struct {
-	// INSERT ADDITIONAL STATUS FIELD - define observed state of cluster
-	// Important: Run "make" to regenerate code after modifying this file
+	// Represents the observations of a Sensor's current state.
+	// Sensor.status.conditions.type are: "Available", "Progressing", and "Degraded"
+	// Sensor.status.conditions.status are one of True, False, Unknown.
+	// Conditions store the status conditions of the Sensor instances
+	// +operator-sdk:csv:customresourcedefinitions:type=status
+	Conditions []metav1.Condition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,1,rep,name=conditions"`
 }
 
 //+kubebuilder:object:root=true

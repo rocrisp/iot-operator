@@ -7,6 +7,9 @@ metadata:
     app.kubernetes.io/part-of: operator-iot
     app.kubernetes.io/managed-by: kustomize
     app.kubernetes.io/created-by: operator-iot
-  name: sensor-sample
+  name: demo-sensor
 spec:
-  # TODO(user): Add fields here
+  size: 2 ###Changes
+  location: room1 ###Changes
+  sensortype: humidity ###Changes
+  

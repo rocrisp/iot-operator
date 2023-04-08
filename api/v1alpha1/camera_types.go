@@ -28,15 +28,20 @@ type CameraSpec struct {
 	// INSERT ADDITIONAL SPEC FIELDS - desired state of cluster
 	// Important: Run "make" to regenerate code after modifying this file
 
+	Size       int32  `json:"size,omitempty"`
 	Cameratype string `json:"cameratype"`
-	Location string `json:"location"`
-	Setting string `json:"setting,omitempty"`
+	Location   string `json:"location"`
+	Setting    string `json:"setting,omitempty"`
 }
 
 // CameraStatus defines the observed state of Camera
 type CameraStatus struct {
-	// INSERT ADDITIONAL STATUS FIELD - define observed state of cluster
-	// Important: Run "make" to regenerate code after modifying this file
+	// Represents the observations of a Camera's current state.
+	// Camera.status.conditions.type are: "Available", "Progressing", and "Degraded"
+	// Camera.status.conditions.status are one of True, False, Unknown.
+	// Conditions store the status conditions of the Camera instances
+	// +operator-sdk:csv:customresourcedefinitions:type=status
+	Conditions []metav1.Condition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,1,rep,name=conditions"`
 }
 
 //+kubebuilder:object:root=true
