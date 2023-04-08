@@ -9,6 +9,6 @@ metadata:
     app.kubernetes.io/created-by: operator-iot
   name: demo-camera
 spec:
-  size: 3 ###Changes
-  cameratype: security ###Changes
-  location: frontdoor ###Changes
+  size: 3
+  cameratype: security
+  location: frontdoor
