@@ -1,0 +1,12 @@
+apiVersion: mygroup.iot.com/v1alpha1
+kind: Camera
+metadata:
+  labels:
+    app.kubernetes.io/name: camera
+    app.kubernetes.io/instance: camera-sample
+    app.kubernetes.io/part-of: operator-iot
+    app.kubernetes.io/managed-by: kustomize
+    app.kubernetes.io/created-by: operator-iot
+  name: camera-sample
+spec:
+  # TODO(user): Add fields here

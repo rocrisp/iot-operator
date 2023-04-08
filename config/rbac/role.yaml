@@ -1,0 +1,59 @@
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  creationTimestamp: null
+  name: manager-role
+rules:
+- apiGroups:
+  - mygroup.iot.com
+  resources:
+  - cameras
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - mygroup.iot.com
+  resources:
+  - cameras/finalizers
+  verbs:
+  - update
+- apiGroups:
+  - mygroup.iot.com
+  resources:
+  - cameras/status
+  verbs:
+  - get
+  - patch
+  - update
+- apiGroups:
+  - mygroup.iot.com
+  resources:
+  - sensors
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - mygroup.iot.com
+  resources:
+  - sensors/finalizers
+  verbs:
+  - update
+- apiGroups:
+  - mygroup.iot.com
+  resources:
+  - sensors/status
+  verbs:
+  - get
+  - patch
+  - update
