@@ -7,9 +7,9 @@ metadata:
     app.kubernetes.io/part-of: operator-iot
     app.kubernetes.io/managed-by: kustomize
     app.kubernetes.io/created-by: operator-iot
-  name: demo-sensor
+  name: animal-sensor
 spec:
-  size: 2
+  size: 1
   location: room1
   sensortype: humidity
   
