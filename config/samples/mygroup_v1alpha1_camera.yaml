@@ -7,8 +7,8 @@ metadata:
     app.kubernetes.io/part-of: operator-iot
     app.kubernetes.io/managed-by: kustomize
     app.kubernetes.io/created-by: operator-iot
-  name: demo-camera
+  name: frontdoor-camera
 spec:
   size: 3
-  cameratype: security
   location: frontdoor
+  cameratype: infrared
